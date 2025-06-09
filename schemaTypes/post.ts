@@ -115,13 +115,13 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'solutionBlock',
-      title: 'Блок решения',
+      name: 'clientTaskBlock',
+      title: 'Задача клиента',
       type: 'object',
       fields: [
         {
           name: 'title',
-          title: 'Название',
+          title: 'Заголовок',
           type: 'localizedString',
           validation: (rule) => rule.required(),
         },
@@ -132,25 +132,35 @@ export default defineType({
           validation: (rule) => rule.required(),
         },
         {
-          name: 'images',
-          title: 'Фотографии',
-          type: 'object',
-          fields: [
-            {
-              name: 'problem',
-              title: 'Фото задачи',
-              type: 'image',
-              validation: (rule) => rule.required(),
-              description: 'Квадратное фото (1:1)',
-            },
-            {
-              name: 'solution',
-              title: 'Фото решения',
-              type: 'image',
-              validation: (rule) => rule.required(),
-              description: 'Квадратное фото (1:1)',
-            },
-          ],
+          name: 'image',
+          title: 'Фото',
+          type: 'image',
+          validation: (rule) => rule.required(),
+        },
+      ],
+    }),
+    defineField({
+      name: 'solutionBlock',
+      title: 'Решение и результат',
+      type: 'object',
+      fields: [
+        {
+          name: 'title',
+          title: 'Заголовок',
+          type: 'localizedString',
+          validation: (rule) => rule.required(),
+        },
+        {
+          name: 'description',
+          title: 'Описание',
+          type: 'localizedBlockContent',
+          validation: (rule) => rule.required(),
+        },
+        {
+          name: 'image',
+          title: 'Фото',
+          type: 'image',
+          validation: (rule) => rule.required(),
         },
       ],
     }),

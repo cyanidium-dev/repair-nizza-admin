@@ -13,6 +13,11 @@ export const localizedString = {
       title: 'English',
       type: 'string',
     },
+    {
+      name: 'fr',
+      title: 'Français',
+      type: 'string',
+    },
   ],
 }
 
@@ -29,6 +34,11 @@ export const localizedBlockContent = {
     {
       name: 'en',
       title: 'English',
+      type: 'blockContent',
+    },
+    {
+      name: 'fr',
+      title: 'Français',
       type: 'blockContent',
     },
   ],
